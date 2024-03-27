@@ -13,7 +13,10 @@ dotenv.config();
 connectDB();
 const app = express();
 const server = createServer(app); 
-app.use(cors());
+app.use(cors({
+  origin: ['https://polite-druid-a752f6.netlify.app', 'http://localhost:5173']
+}));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -39,7 +42,7 @@ const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
     origin: "https://polite-druid-a752f6.netlify.app",
-    
+    // origin:"http://localhost:5173/"
   },
 });
 
