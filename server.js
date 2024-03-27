@@ -38,10 +38,11 @@ server.listen(
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://creative-alpaca-0413ee.netlify.app/",
-    // credentials: true,
+    origin: "https://polite-druid-a752f6.netlify.app",
+    
   },
 });
+
 
 io.on("connection", (socket) => {
   console.log("Connected to socket.io");
